@@ -76,15 +76,28 @@ public class StartPhoneBook {
            wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/login");
 
            wd.findElement(By.cssSelector("div"));//by tag name
+           wd.findElement(By.xpath("//div"));
+           wd.findElement(By.xpath("//a"));
 
            wd.findElement(By.cssSelector(".login_login__3EHKB"));//точка впереди указывает на поиск by class
+           wd.findElement(By.xpath("//*[@class='login_login__3EHKB']"));//поиск класса через xPath
 
            wd.findElement(By.cssSelector("#root"));//  # - search by id
+           wd.findElement(By.xpath("//*[@id='root']"));//поиск id через xPath
 
            wd.findElement((By.cssSelector("[placeholder='Password']")));//поиск по атрибуту
-           wd.findElement((By.cssSelector("[placeholder=*'ss']")));
-           wd.findElement((By.cssSelector("[placeholder=^'Pa']")));
-           wd.findElement((By.cssSelector("[placeholder=^'Pa']")));
+           wd.findElement((By.xpath("//*[@placeholder='Password']")));
+           wd.findElement((By.cssSelector("[placeholder]")));//поиск по атрибуту
+           wd.findElement(By.xpath("//*[@placeholder]"));
 
+
+           wd.findElement((By.cssSelector("[placeholder*='ss']")));
+
+           wd.findElement(By.xpath("//*[starts-with(@placeholder,'Pa')]"));
+           wd.findElement((By.cssSelector("[placeholder^='Pa']")));
+
+           wd.findElement(By.xpath("//*[text()='Maria Anders']"));
+           wd.findElement(By.cssSelector("#customers tr:nth-child(2) td:nth-child(2)"));
+           wd.findElement(By.xpath("//*[@id='customers']//tr[2]/td[2]"));
        }
     }
